@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="movie-detail">
+    <button class="btn btn-secondary" (click)="onRefresh()">Refresh</button>
+  </div>
+  <div class="col-xs-12 movie-detail movie-detail-panel">
+    <div class="spinner-border" role="status" *ngIf="isLoading"></div>
+    <div *ngIf="!isLoading">
+      <form *ngIf="hasMovieDetail">
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Title : </span>
+          <span class="movie-detail-value">{{ movieDetail.title }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Rating :</span>
+          <span class="movie-detail-value">{{ movieDetail.rated }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Run Time :</span>
+          <span class="movie-detail-value">{{ movieDetail.runtime }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Genre : </span>
+          <span class="movie-detail-value">{{ movieDetail.genre }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Director :</span>
+          <span class="movie-detail-value"> {{ movieDetail.director }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Writer :</span>
+          <span class="movie-detail-value">{{ movieDetail.writer }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Actors :</span>
+          <span class="movie-detail-value">{{ movieDetail.actors }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Plot :</span>
+          <span class="movie-detail-value">{{ movieDetail.plot }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Language : </span>
+          <span class="movie-detail-value">{{ movieDetail.language }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">MetaScore : </span>
+          <span class="movie-detail-value">{{ movieDetail.metaScore }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Country : </span>
+          <span class="movie-detail-value">{{ movieDetail.country }}</span>
+        </div>
+        <div class="form-group movie-detail-field" *ngIf="hasAwards">
+          <span class="movie-detail-label">Awards : </span>
+          <span class="movie-detail-value">{{ movieDetail.awards }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Year : </span>
+          <span class="movie-detail-value">{{ movieDetail.year }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Price : </span>
+          <span class="movie-detail-value">{{ movieDetail.price }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Released : </span>
+          <span class="movie-detail-value">{{ movieDetail.released }}</span>
+        </div>
+        <div class="form-group movie-detail-field">
+          <span class="movie-detail-label">Votes : </span>
+          <span class="movie-detail-value">{{ movieDetail.votes }}</span>
+        </div>
+      </form>
+      <div class="form-group movie-detail-field" *ngIf="!hasMovieDetail">
+        Please try again.......
+      </div>
+    </div>
+  </div>
+</div>

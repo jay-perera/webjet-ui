@@ -1,0 +1,37 @@
+.toolbar {
+  height: 100px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #webjet-logo:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.logo-box {
+  position: absolute;
+  left: 80px;
+}
+
+.title {
+  font-family: 'Roboto, Helvetica Neue, sans-serif';
+  position: absolute;
+  left: 200px;
+  padding-bottom: 0px;
+  letter-spacing: 2px;
+}
+
+.spacer {
+  flex: 1;
+}

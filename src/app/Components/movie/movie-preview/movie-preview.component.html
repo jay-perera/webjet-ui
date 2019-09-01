@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a [routerLink]="inputMovie.isSelected ? ['/movies', inputMovie.id] : ['/movies']">
+      <div
+        class="col-xs-6 preview-item"
+        [ngClass]="{
+          'preview-item-clicked': inputMovie.isSelected,
+          'preview-item-shadow': !inputMovie.isSelected
+        }"
+        (click)="onMovieCardClick()"
+        id="movie-item"
+      >
+        <div class="row">
+          <div class="col-xs-3" style="display: flex;">
+            <img src="{{ inputMovie.poster }}" class="preview-img" (error)="onSourceImageError($event)" />
+          </div>
+          <div class="preview-item-detail ">
+            <span class="preview-detail-header">{{ inputMovie.title }}</span>
+            <span class="preview-detail-body">{{ inputMovie.year }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
