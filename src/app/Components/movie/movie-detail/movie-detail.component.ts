@@ -13,13 +13,15 @@ export class MovieDetailComponent implements OnInit {
   public hasAwards: boolean;
   public hasMovieDetail: boolean;
   public isLoading: boolean;
+  public isFirstTimeLoad = true;
 
   private currentId: string;
+
 
   constructor(private externalMovieService: ExternalMovieService, private route: ActivatedRoute) {
     this.movieDetail = null;
     this.hasAwards = false;
-    this.hasMovieDetail = false;
+    this.hasMovieDetail = true;
     this.isLoading = false;
   }
 
@@ -34,6 +36,7 @@ export class MovieDetailComponent implements OnInit {
       if (movie) {
         if (movie.id === this.currentId) {
           this.isLoading = false;
+          this.isFirstTimeLoad = false;
           if (movie) {
             this.hasMovieDetail = true;
             this.movieDetail = movie;

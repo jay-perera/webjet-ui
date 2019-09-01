@@ -3,7 +3,7 @@
     <button class="btn btn-secondary" (click)="onRefresh()">Refresh</button>
   </div>
   <div class="col-xs-12 movie-detail movie-detail-panel">
-    <div class="spinner-border" role="status" *ngIf="isLoading"></div>
+    <div class="spinner-border" role="status" *ngIf="isLoading || isFirstTimeLoad"></div>
     <div *ngIf="!isLoading">
       <form *ngIf="hasMovieDetail">
         <div class="form-group movie-detail-field">
@@ -71,7 +71,7 @@
           <span class="movie-detail-value">{{ movieDetail.votes }}</span>
         </div>
       </form>
-      <div class="form-group movie-detail-field" *ngIf="!hasMovieDetail">
+      <div class="form-group movie-detail-field" *ngIf="!hasMovieDetail && !isFirstTimeLoad">
         Please try again.......
       </div>
     </div>
